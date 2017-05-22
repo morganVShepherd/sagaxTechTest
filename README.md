@@ -4,7 +4,7 @@ The Code is for the Test sent by Sagax, I don't want to put too much information
 
 ## Motivation
 
-This project is for the Developers to look through review and realise they really want to hire me for my humour and Developing abilities
+This project is for the Developers to look through, review and realise they really want to hire me for my humour and Developing abilities
 
 ## Installation
 
