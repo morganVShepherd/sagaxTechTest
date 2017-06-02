@@ -17,7 +17,7 @@ public class Constants {
     /*
     Normally this would be a little better structured as a web page for a full on API
      */
-    public static String API = "<p>Version 1.1</p>\n" +
+    public static String API = "<p>Version 1.1 </p>\n" +
             "<p>There are currently 2 methods:</p>\n" +
             "<p><strong>/api</strong></p>\n" +
             "<p>Requires: nothing<br /> Returns this document</p>\n" +
