@@ -7,10 +7,14 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="dubspottest" />
+        <module name="INM-test" />
+        <module name="SAGAX-test" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
       <module name="dubspottest" target="1.8" />
+      <module name="INM-test" target="1.8" />
+      <module name="SAGAX-test" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

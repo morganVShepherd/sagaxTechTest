@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/INM-test.iml" filepath="$PROJECT_DIR$/INM-test.iml" />
       <module fileurl="file://$PROJECT_DIR$/sagaxtest.iml" filepath="$PROJECT_DIR$/sagaxtest.iml" />
     </modules>
   </component>

@@ -1,60 +1,72 @@
 package hire.morgan.constants;
 
+/**
+ * Created by morgan.shepherd
+ */
+
 public class Constants {
-    // Constants for Calculations
-    public static int STRIDES_FOR_LANDING = 2;
-    public static int MAX_FLIGHTS = 30;
-    public static int MAX_STEPS = 20;
-    public static int MAX_STEPS_PER_STRIDE =4;
+    //APP Data Value names
+    public static final String ACCESS_TOKEN = "ACCESS_TOKEN";
+    public static final String APP_ID ="APP_ID";
+    public static final String APP_SECRET="APP_SECRET";
+    public static final String PAGE_ID= "PAGE_ID";
+    public static final String UPDATED_DATE= "UPDATED_DATE";
 
-    //Constants for Errors
-    public static String MAX_FLIGHTS_ERROR = "There Cannot be more than "+MAX_FLIGHTS+" flights";
-    public static String MAX_STEPS_ERROR = "There Cannot be more than "+MAX_STEPS+" steps per flight";
-    public static String MAX_STEPS_PER_STRIDE_ERROR = "No Pogo Stick's on the stairwell";//there are too many strides per step
+    //For Postgress DB
+    public static final String PATH = "jdbc:postgresql://localhost:5432/inm";
+    public static final String UNAME="postgres";
+    public static final String PASS="root";
+    public static final String FOR_NAME ="org.postgresql.Driver";
+
+    //For mysql DB
+    //public static final String PATH = "jdbc:mysql://localhost:3306/inm";
+    //public static final String UNAME="root";
+    //public static final String PASS="root";
+    //public static final String FOR_NAME ="com.mysql.jdbc.Driver";
 
 
-    //Constant for API
-    /*
-    Normally this would be a little better structured as a web page for a full on API
-     */
-    public static String API = "<p>Version 1.1</p>\n" +
-            "<p>There are currently 2 methods:</p>\n" +
-            "<p><strong>/api</strong></p>\n" +
-            "<p>Requires: nothing<br /> Returns this document</p>\n" +
-            "<p><strong>/strideCount( json requestObj)</strong></p>\n" +
-            "<p>Requires:</p>\n" +
-            "<p>json requestObj:<br /> \n" +
-            "\t{<br /> \n" +
-            "\t\"flights\":[4,9,8,11,7,22,14], //an int array of flights with steps per flight\n" +
-            "\t<br /> \n" +
-            "\t\"stepsPerStride\": \"2\" // an int of amount of steps a user can use per stride\n" +
-            "\t<br /> \n" +
-            "\t}\n" +
-            "</p>\n" +
-            "<p>Returns: 7 // minimum number of strides</p>\n" +
-            "<p>\n" +
-            "\t<br /> \n" +
-            "\t<strong>Custom Errors:</strong>\n" +
-            "\t<br /> Returns:\n" +
-            "\t<br />{\n" +
-            "\t\t<br /> \"minStrides\": 0,\n" +
-            "\t\t<br /> \"message\": \"There Cannot be more than 20 steps per flight\"\n" +
-            "\t<br /> }\n" +
-            "\t<br /> then one of your flights of steps has too many steps.</p>\n" +
-            "<p>\n" +
-            "Returns:\n" +
-            "\t<br /> {\n" +
-            "\t\t<br />  \"minStrides\": 0,\n" +
-            "\t\t<br />  \"message\": \"There Cannot be more than 30 flights\"\n" +
-            "\t<br /> }\n" +
-            "\t<br /> Then you have too many flights of steps\n" +
-            "</p>"+
-            "Returns:\n" +
-            "\t<br /> {\n" +
-            "\t\t<br />  \"minStrides\": 0,\n" +
-            "\t\t<br />  \"message\": \"No Pogo Stick's on the stairwell\"\n" +
-            "\t<br /> }\n" +
-            "\t<br /> Then you are taking too many steps per \"stride\"\n" +
-            "</p>";;
+    public static final String SQL = "create schema inm;<br/>" +
+            "<br/>" +
+            "create table app_data(<br/>" +
+            "name varchar(255),<br/>" +
+            "value varchar(255)<br/>" +
+            ");<br/>" +
+            "<br/>" +
+            "create table post_details (<br/>" +
+            "post_detail_id bigint not null ,<br/>" +
+            "parent_id bigint ,<br/>" +
+            "created_date timestamp without time zone not null,<br/>" +
+            "updated_date timestamp without time zone not null,<br/>" +
+            "type_fb_post varchar(255),<br/>" +
+            "content varchar(255),<br/>" +
+            "html varchar(255),<br/>" +
+            "likes int,<br/>" +
+            "shares int,<br/>" +
+            "comments int,<br/>" +
+            "impressions int,<br/>" +
+            "reach int,<br/>" +
+            "engagement int,<br/>" +
+            "engagers int,<br/>" +
+            "PRIMARY KEY (post_detail_id)<br/>" +
+            ");<br/>" +
+            "<br/>" +
+            "#I generally add index after table creation<br/>" +
+            "<br/>" +
+            "create index post_id_index on post_details using btree(post_detail_id);<br/>" +
+            "<br/>" +
+            "<br/>" +
+            "#Inserts:<br/>" +
+            "insert into app_data values('UPDATED_DATE', '01-06-2017 08:00:00');<br/>" +
+            "insert into app_data values('ACCESS_TOKEN', 'yourToken');<br/>" +
+            "<br/>" +
+            "insert into app_data values('APP_ID', 'yourAppId');<br/>" +
+            "<br/>" +
+            "insert into app_data values('APP_SECRET', 'yourAppSecret');<br/>" +
+            "<br/>" +
+            "insert into app_data values('PAGE_ID', 'yourPageId');";
+
+
+
+
 
 }
